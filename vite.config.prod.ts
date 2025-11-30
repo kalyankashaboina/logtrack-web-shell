@@ -19,11 +19,18 @@ export default mergeConfig(
 
     define: {
       __DEV__: false,
-      __PROD__: true
+      __PROD__: true,
+
+    
+      'import.meta.env.VITE_USERS_REMOTE':
+        JSON.stringify('https://logtrack-users-microfrontend.vercel.app/assets/remoteEntry.js'),
+
+      'import.meta.env.VITE_AUDIT_REMOTE':
+        JSON.stringify('https://logtrack-audit-microfrontend.vercel.app/assets/remoteEntry.js')
     },
 
     build: {
-        target: 'esnext', 
+      target: 'esnext',
       minify: 'esbuild',
       sourcemap: false,
       cssCodeSplit: true
