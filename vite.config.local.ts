@@ -10,8 +10,8 @@ export default mergeConfig(
       federation({
         name: 'host',
         remotes: {
-            users_app: 'http://localhost:5001/users/assets/remoteEntry.js',
-          audit_app: 'http://localhost:5002/audit/assets/remoteEntry.js'
+            users_app: 'http://localhost:5001/assets/remoteEntry.js',
+          audit_app: 'http://localhost:5002/assets/remoteEntry.js'
         },
         shared: federationShared
       })

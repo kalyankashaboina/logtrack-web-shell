@@ -4,8 +4,8 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import './index.css'
 
-const REMOTE_USERS = (import.meta.env.VITE_USERS_REMOTE as string) ?? 'http://localhost:5001/users/assets/remoteEntry.js'
-const REMOTE_AUDIT = (import.meta.env.VITE_AUDIT_REMOTE as string) ?? 'http://localhost:5002/audit/assets/remoteEntry.js'
+const REMOTE_USERS = (import.meta.env.VITE_USERS_REMOTE as string) ?? 'http://localhost:5001/assets/remoteEntry.js'
+const REMOTE_AUDIT = (import.meta.env.VITE_AUDIT_REMOTE as string) ?? 'http://localhost:5002/assets/remoteEntry.js'
 
 console.log('🔌 Host configuration:')
 console.log('👉 Users Remote:', REMOTE_USERS)

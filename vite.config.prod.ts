@@ -10,8 +10,8 @@ export default mergeConfig(
       federation({
         name: 'host',
         remotes: {
-          users_app: 'https://your-domain.com/users/remoteEntry.js',
-          audit_app: 'https://your-domain.com/audit/remoteEntry.js'
+          users_app: 'https://logtrack-users-microfrontend.vercel.app/assets/remoteEntry.js',
+          audit_app: 'https://logtrack-audit-microfrontend.vercel.app/assets/remoteEntry.js'
         },
         shared: federationShared
       })
