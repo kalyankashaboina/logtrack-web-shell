@@ -23,9 +23,9 @@ export default mergeConfig(
     },
 
     build: {
+        target: 'esnext', 
       minify: 'esbuild',
       sourcemap: false,
-      target: 'es2018',
       cssCodeSplit: true
     }
   })
