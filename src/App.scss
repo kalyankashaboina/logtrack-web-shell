@@ -1,0 +1,272 @@
+/* App.scss — polished, professional styles */
+
+:root {
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5a4;
+  --accent-dark: #0b7a73;
+  --danger: #ef4444;
+  --radius: 10px;
+  --shadow: 0 6px 18px rgba(12,15,20,0.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* HEADER */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+  border-bottom: 1px solid #eef2f7;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo svg { border-radius: 6px; display: block; }
+.logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  background: transparent;
+  transition: all 160ms ease;
+  box-shadow: none;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+  background: #f1f5f9;
+}
+
+.nav-link.active {
+  background: linear-gradient(90deg, #e8fdfc, #e6f7f6);
+  color: var(--accent-dark);
+  box-shadow: 0 6px 18px rgba(14,165,164,0.06);
+}
+
+/* small offline badge */
+.badge {
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 999px;
+  margin-left: 8px;
+  color: #7f1d1d;
+  background: #fff5f5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge.offline {
+  color: var(--danger);
+  background: rgba(254,226,226,0.9);
+}
+
+/* header right */
+.header-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* remote status */
+.remote-status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
+}
+
+.status-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.status-text {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* avatar */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(14,165,164,0.12);
+}
+
+/* MAIN */
+.app-main {
+  padding: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* welcome card */
+.welcome-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid #f3f6f9;
+}
+
+.remote-offline {
+  padding: 20px;
+  background: #fff7f7;
+  border: 1px solid #ffe5e5;
+  border-radius: 10px;
+  color: #521212;
+  box-shadow: 0 4px 10px rgba(255,30,30,0.03);
+}
+
+/* spinner for Suspense fallback */
+.spinner-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #eef2f7;
+  box-shadow: var(--shadow);
+  width: fit-content;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid rgba(14,165,164,0.18);
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.spinner-label {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* small responsive tweaks */
+@media (max-width: 880px) {
+  .app-header {
+    padding: 12px 16px;
+  }
+
+  .nav {
+    gap: 6px;
+  }
+
+  .remote-status { display: none; }
+}
+
+@media (max-width: 560px) {
+  .logo-text { display: none; }
+  .app-main { padding: 16px; }
+  .nav-link { padding: 7px 10px; font-size: 13px; }
+}
+.welcome-list {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+
+  li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.status-pill {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.status-pill.online {
+  background: #16a34a21;
+  color: #16a34a;
+}
+
+.status-pill.offline {
+  background: #ef444421;
+  color: #ef4444;
+}
+
+.welcome-note {
+  margin-top: 1rem;
+  color: #6b7280;
+}
